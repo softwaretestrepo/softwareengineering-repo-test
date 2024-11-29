@@ -12,3 +12,10 @@ def guide_view(project_id):
     # 목차와 콘텐츠를 렌더링
     return render_template('guide.html',project=Project.find_by_id(project_id),
                            userproject=UserProject.find_by_user_and_project(current_user.id, project_id))
+
+@guide_bp.route('/<int:project_id>/guide', methods=['GET'])
+@login_required
+def guide_view(project_id):
+    # 목차와 콘텐츠를 렌더링
+    return render_template('guide.html',project=Project.find_by_id(project_id),
+                           userproject=UserProject.find_by_user_and_project(current_user.id, project_id))
