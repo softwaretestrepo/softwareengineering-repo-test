@@ -3,7 +3,7 @@ from flask import Flask, render_template
 from controllers.auth import auth_bp, init_login_manager  # auth.py에서 가져오기
 from dotenv import load_dotenv
  
-# .env 파일 로드
+# .env 파일 로드 #
 load_dotenv()
 
 # Flask app setup
